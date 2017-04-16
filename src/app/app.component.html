@@ -1,0 +1,129 @@
+<md-toolbar color="primary">
+  <span>{{title}}</span>
+</md-toolbar>
+
+<br>
+<md-card>
+  <md-card-title>
+    Add new reading
+  </md-card-title>
+  <md-card-content>
+    <md-input-container >
+    <input mdInput  type="date" placeholder="Date of reading">
+    </md-input-container>
+  <md-input-container style="width: 100%;">
+    <input mdInput  type="number"  placeholder="Enter Sugar reading">
+  </md-input-container>
+  <md-radio-button>On Empty Stomach </md-radio-button>
+  <md-radio-button>After Breakfast</md-radio-button>
+  <md-radio-button>Before Lunch</md-radio-button>
+  <md-radio-button>After Lunch</md-radio-button>
+  <md-radio-button>Before dinner</md-radio-button>
+  <md-radio-button>After dinner</md-radio-button>
+
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <button md-mini-fab style="background-color:green;color:white"><md-icon>check</md-icon></button>
+    <button md-mini-fab style="background-color:red;color:white"><md-icon>clear</md-icon></button>
+  </md-card-actions>
+</md-card>
+
+<br>
+
+<md-card>
+
+  <md-card-content>
+    <div>
+    <ngx-datatable
+      style="width: 100%"
+      class="material"
+      [rows]="rows"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="'auto'"
+      [limit]="5"
+      [selected]="selected"
+      [selectionType]="'checkbox'">
+      <ngx-datatable-column
+        [width]="30"
+        [sortable]="true"
+        [canAutoResize]="false"
+        [draggable]="true"
+        [resizeable]="true"
+        [headerCheckboxable]="true"
+        [checkboxable]="true">
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Name" [sortable]="true">
+        <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+            <span
+              title="Double click to edit"
+              (dblclick)="editing[row.$$index + '-name'] = true"
+              *ngIf="!editing[row.$$index + '-name']">
+              {{value}}	feat(css): Added explicit `headerClass` and `cellClass`	2 days ago
+
+            </span>
+          <input
+            autofocus
+
+            *ngIf="editing[row.$$index + '-name']"
+            type="text"
+            [value]="value"
+          />
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Gender" [sortable]="true"></ngx-datatable-column>
+      <ngx-datatable-column name="Company" [sortable]="true"></ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+
+  </md-card-content>
+</md-card>
+
+
+
+<br>
+
+  <md-card>
+    <md-card-title>Blood sugar history</md-card-title>
+    <md-card-content>
+      <table>
+        <th>Date</th>
+        <th>sugar Reading</th>
+        <th>Reading time</th>
+
+        <tr><td>21/02/2015</td><td>210</td><td>On Empty Stomach</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>After Breakfast</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>Before Lunch</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>After Lunch</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>Before Dinner</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>After Dinner</td></tr>
+
+        <tr><td>21/02/2015</td><td>210</td><td>On Empty Stomach</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>After Breakfast</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>Before Lunch</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>After Lunch</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>Before Dinner</td></tr>
+        <tr><td>30/04/2015</td><td>210</td><td>After Dinner</td></tr>
+
+        <tr><td>26/04/2015</td><td>210</td><td>On Empty Stomach</td></tr>
+        <tr><td>21/04/2015</td><td>210</td><td>After Breakfast</td></tr>
+        <tr><td>16/04/2015</td><td>210</td><td>Before Lunch</td></tr>
+        <tr><td>09/04/2015</td><td>210</td><td>After Lunch</td></tr>
+        <tr><td>02/04/2015</td><td>210</td><td>Before Dinner</td></tr>
+        <tr><td>27/03/2015</td><td>210</td><td>After Dinner</td></tr>
+
+        <tr><td>21/03/2015</td><td>210</td><td>On Empty Stomach</td></tr>
+        <tr><td>15/03/2015</td><td>210</td><td>After Breakfast</td></tr>
+        <tr><td>07/03/2015</td><td>210</td><td>Before Lunch</td></tr>
+        <tr><td>01/03/2015</td><td>210</td><td>After Lunch</td></tr>
+        <tr><td>25/02/2015</td><td>210</td><td>Before Dinner</td></tr>
+        <tr><td>21/02/2015</td><td>210</td><td>After Dinner</td></tr>
+
+
+
+
+      </table>
+
+    </md-card-content>
+  </md-card>
