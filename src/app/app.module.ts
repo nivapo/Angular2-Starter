@@ -6,21 +6,26 @@ import {MaterialModule} from '@angular/material';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import {Data} from '../providers/sampledata';
+import {BarchartComponent} from  './LineChart/barchart.component';
+import {LoginView} from  './LoginView/LoginView.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,BarchartComponent,LoginView
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     BrowserAnimationsModule,
     NgxDatatableModule
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [Data],
+  bootstrap: [AppComponent,LoginView]
 })
 export class AppModule { }

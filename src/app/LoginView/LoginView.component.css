@@ -1,0 +1,55 @@
+.login-wrapper{
+
+}
+
+.login {
+width: 30%;
+height: 100%;
+background-image: url("/assets/Sugar-meter.png") ;
+background-repeat: no-repeat;
+    background-position-y: inherit;
+}
+
+.login-image{
+width: 70%;
+height: 100%;
+display: flex;
+align-content: center;
+align-items: center;
+justify-content: center;
+}
+.md-title{
+background-color: rgb(16, 108, 200);
+color: white;
+border-radius: 10px;
+text-align: center;
+padding: 0px;
+}
+.login-form{
+  width: 30%;
+  border-radius: 10px;
+background-color:
+}
+.login-details{
+display:flex;
+flex-direction: column;
+align-items: flex-start;
+margin-top: 59vh;
+}
+.login-input{
+  margin-left: 20%;
+  color: black;
+width: 60%
+}
+.loginview{
+  background-image: url("https://www.endocrineweb.com/sites/default/files/lead-images/pro/Blood%20Sugar%20Chart.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+display: flex;
+margin: 0px;
+height:100vh;
+}
+body{
+margin:0px;
+}
